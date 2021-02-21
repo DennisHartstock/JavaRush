@@ -1,1 +1,1 @@
-# JavaRush
+# JavaRush Solutions
