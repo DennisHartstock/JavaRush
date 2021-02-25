@@ -62,19 +62,35 @@ public class EnemyFleet {
         if (ships.isEmpty()) {
             return;
         }
-        
+
         Direction currentDirection = direction;
-            if (direction == Direction.LEFT && getLeftBorder() < 0) {
-                direction = Direction.RIGHT;
-                currentDirection = Direction.DOWN;
-            } else if (direction == Direction.RIGHT && getRightBorder() > SpaceInvadersGame.WIDTH) {
-                direction = Direction.LEFT;
-                currentDirection = Direction.DOWN;
-            }
-            
-            double speed = getSpeed();
-            for (EnemyShip ship : ships) {
-                ship.move(currentDirection, speed);
+        if (direction == Direction.LEFT && getLeftBorder() < 0) {
+            direction = Direction.RIGHT;
+            currentDirection = Direction.DOWN;
+        } else if (direction == Direction.RIGHT && getRightBorder() > SpaceInvadersGame.WIDTH) {
+            direction = Direction.LEFT;
+            currentDirection = Direction.DOWN;
         }
+
+        double speed = getSpeed();
+        for (EnemyShip ship : ships) {
+            ship.move(currentDirection, speed);
+        }
+    }
+
+    public Bullet fire(Game game) {
+        if (ships.isEmpty()) {
+            return null;
+        }
+
+        int random = game.getRandomNumber(100 / SpaceInvadersGame.COMPLEXITY);
+        if (random > 0) {
+            return null;
+        }
+
+        int shipNumber = game.getRandomNumber(ships.size());
+        EnemyShip ship = ships.get(shipNumber);
+
+        return ship.fire();
     }
 }
