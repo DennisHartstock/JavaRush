@@ -29,7 +29,7 @@ public class PlayerShip extends Ship {
             }
         }
     }
-
+    
     @Override
     public void kill() {
         if (!isAlive) {
@@ -45,6 +45,14 @@ public class PlayerShip extends Ship {
         );
     }
     
+    @Override
+    public Bullet fire() {
+        if (!isAlive) {
+            return null;
+        }
+        
+        return new Bullet(x + 2, y - ShapeMatrix.BULLET.length, Direction.UP);
+    }
     public void setDirection(Direction newDirection) {
         if (newDirection != Direction.DOWN) {
             this.direction = newDirection;
