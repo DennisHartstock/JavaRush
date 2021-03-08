@@ -13,6 +13,7 @@ public class SpaceInvadersGame extends Game {
     public static final int WIDTH = 64;
     public static final int HEIGHT = 64;
     public static final int COMPLEXITY = 5;
+    private static final int PLAYER_BULLETS_MAX = 1;
 
     private List<Star> stars;
     private EnemyFleet enemyFleet;
@@ -50,6 +51,11 @@ public class SpaceInvadersGame extends Game {
                 createGame();
                 return;
             }
+
+            Bullet bullet = playerShip.fire();
+            if (bullet != null && playerBullets.size() < PLAYER_BULLETS_MAX) {
+                playerBullets.add(bullet);
+            }
         }
         
         if (key == Key.LEFT) {
@@ -59,6 +65,7 @@ public class SpaceInvadersGame extends Game {
         if (key == Key.RIGHT) {
             playerShip.setDirection(Direction.RIGHT);
         }
+        
     }
     
     @Override
@@ -71,6 +78,14 @@ public class SpaceInvadersGame extends Game {
         }
     }
 
+    @Override
+    public void setCellValueEx(int x, int y, Color color, String value) {
+        if (x > WIDTH - 1 || x < 0 || y < 0 || y > HEIGHT - 1) {
+            return;
+        }
+        super.setCellValueEx(x, y, color, value);
+    }
+    
     private void createGame() {
         isGameStopped = false;
         animationsCount = 0;
@@ -135,6 +150,8 @@ public class SpaceInvadersGame extends Game {
 
     private void removeDeadBullets() {
         enemyBullets.removeIf(bullet -> !bullet.isAlive || bullet.y >= HEIGHT - 1);
+        
+        playerBullets.removeIf(bullet -> !bullet.isAlive || bullet.y + bullet.height < 0);
     }
 
     private void check() {
