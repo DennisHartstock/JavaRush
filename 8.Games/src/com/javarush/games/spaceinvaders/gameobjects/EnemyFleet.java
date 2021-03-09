@@ -93,4 +93,19 @@ public class EnemyFleet {
 
         return ship.fire();
     }
+
+    public void verifyHit(List<Bullet> bullets) {
+        for (Bullet bullet : bullets) {
+            for (EnemyShip ship : ships) {
+                if (ship.isAlive && bullet.isAlive && ship.isCollision(bullet)) {
+                    ship.kill();
+                    bullet.kill();
+                }
+            }
+        }
+    }
+
+    public void deleteHiddenShips() {
+        ships.removeIf(ship -> !ship.isVisible());
+    }
 }
