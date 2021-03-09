@@ -43,9 +43,9 @@ public class SpaceInvadersGame extends Game {
 
         drawScene();
     }
-    
+
     @Override
-            public void onKeyPress(Key key) {
+    public void onKeyPress(Key key) {
         if (key == Key.SPACE) {
             if (isGameStopped) {
                 createGame();
@@ -57,17 +57,17 @@ public class SpaceInvadersGame extends Game {
                 playerBullets.add(bullet);
             }
         }
-        
+
         if (key == Key.LEFT) {
             playerShip.setDirection(Direction.LEFT);
         }
-        
+
         if (key == Key.RIGHT) {
             playerShip.setDirection(Direction.RIGHT);
         }
-        
+
     }
-    
+
     @Override
     public void onKeyReleased(Key key) {
         if (key == Key.LEFT && playerShip.getDirection() == Direction.LEFT) {
@@ -85,7 +85,7 @@ public class SpaceInvadersGame extends Game {
         }
         super.setCellValueEx(x, y, color, value);
     }
-    
+
     private void createGame() {
         isGameStopped = false;
         animationsCount = 0;
@@ -108,7 +108,7 @@ public class SpaceInvadersGame extends Game {
         for (Bullet bullet : enemyBullets) {
             bullet.draw(this);
         }
-        
+
         for (Bullet bullet : playerBullets) {
             bullet.draw(this);
         }
@@ -138,11 +138,11 @@ public class SpaceInvadersGame extends Game {
     private void moveSpaceObjects() {
         enemyFleet.move();
         playerShip.move();
-        
+
         for (Bullet enemyBullet : enemyBullets) {
             enemyBullet.move();
         }
-        
+
         for (Bullet bullet : playerBullets) {
             bullet.move();
         }
@@ -150,14 +150,14 @@ public class SpaceInvadersGame extends Game {
 
     private void removeDeadBullets() {
         enemyBullets.removeIf(bullet -> !bullet.isAlive || bullet.y >= HEIGHT - 1);
-        
+
         playerBullets.removeIf(bullet -> !bullet.isAlive || bullet.y + bullet.height < 0);
     }
 
     private void check() {
         playerShip.verifyHit(enemyBullets);
         removeDeadBullets();
-        
+
         if (!playerShip.isAlive) {
             stopGameWithDelay();
         }
