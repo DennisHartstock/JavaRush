@@ -29,7 +29,7 @@ public class PlayerShip extends Ship {
             }
         }
     }
-    
+
     @Override
     public void kill() {
         if (!isAlive) {
@@ -37,29 +37,28 @@ public class PlayerShip extends Ship {
         }
         isAlive = false;
 
-        super.setAnimatedView(
+        super.setAnimatedView(false,
                 ShapeMatrix.KILL_PLAYER_ANIMATION_FIRST,
                 ShapeMatrix.KILL_PLAYER_ANIMATION_SECOND,
                 ShapeMatrix.KILL_PLAYER_ANIMATION_THIRD,
-                ShapeMatrix.DEAD_PLAYER
-        );
+                ShapeMatrix.DEAD_PLAYER);
     }
-    
+
     @Override
     public Bullet fire() {
         if (!isAlive) {
             return null;
         }
-        
+
         return new Bullet(x + 2, y - ShapeMatrix.BULLET.length, Direction.UP);
     }
-    
+
     public void setDirection(Direction newDirection) {
         if (newDirection != Direction.DOWN) {
             this.direction = newDirection;
         }
     }
-    
+
     public Direction getDirection() {
         return direction;
     }
@@ -72,7 +71,6 @@ public class PlayerShip extends Ship {
         if (direction == Direction.LEFT) {
             x--;
         }
-
         if (direction == Direction.RIGHT) {
             x++;
         }
@@ -80,7 +78,6 @@ public class PlayerShip extends Ship {
         if (x < 0) {
             x = 0;
         }
-
         if (x + width > SpaceInvadersGame.WIDTH) {
             x = SpaceInvadersGame.WIDTH - width;
         }
