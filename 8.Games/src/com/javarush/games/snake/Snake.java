@@ -44,10 +44,6 @@ public class Snake {
         removeTail();
     }
 
-    public void setDirection(Direction direction) {
-        this.direction = direction;
-    }
-
     public GameObject createNewHead() {
         GameObject oldHead = snakeParts.get(0);
         if (direction == Direction.LEFT) {
@@ -63,5 +59,19 @@ public class Snake {
 
     public void removeTail() {
         snakeParts.remove(snakeParts.size() - 1);
+    }
+
+    public void setDirection(Direction direction) {
+        if (direction == Direction.UP && this.direction == Direction.DOWN) {
+            return;
+        } else if (direction == Direction.LEFT && this.direction == Direction.RIGHT) {
+            return;
+        } else if (direction == Direction.RIGHT && this.direction == Direction.LEFT) {
+            return;
+        } else if (direction == Direction.DOWN && this.direction == Direction.UP) {
+            return;
+        }
+
+        this.direction = direction;
     }
 }
