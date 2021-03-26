@@ -39,6 +39,11 @@ public class Snake {
             isAlive = false;
             return;
         }
+        
+        if (checkCollision(newHead)) {
+            isAlive = false;
+            return;
+        }
 
         snakeParts.add(0, newHead);
 
@@ -78,5 +83,14 @@ public class Snake {
         }
 
         this.direction = direction;
+    }
+    
+    public boolean checkCollision(GameObject gameObject) {
+        for (GameObject part : snakeParts) {
+            if (part.x == gameObject.x && part.y == gameObject.y) {
+                return true;
+            }
+        }
+        return false;
     }
 }
