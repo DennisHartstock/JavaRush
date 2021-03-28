@@ -13,7 +13,7 @@ public class DateTimeGenerator {
     private static final long MIN_DAY = LocalDate.of(1990, 1, 1).toEpochDay();
     private static final long MAX_DAY = LocalDate.of(2020, 12, 31).toEpochDay();
 
-    private static final long MAX_NANO = 86399999999999L;
+    private static long maxNano = 86399999999999L;
 
     public static LocalDate generateDate() {
         long randomDay = ThreadLocalRandom.current().nextLong(MIN_DAY, MAX_DAY);
@@ -21,7 +21,7 @@ public class DateTimeGenerator {
     }
 
     public static LocalTime generateTime() {
-        long randomTime = ThreadLocalRandom.current().nextLong(0, MAX_NANO);
+        long randomTime = ThreadLocalRandom.current().nextLong(0, maxNano);
         return LocalTime.ofNanoOfDay(randomTime);
     }
 
