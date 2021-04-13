@@ -15,7 +15,7 @@ public class MinesweeperGame extends Game {
     private static final String FLAG = "\uD83D\uDEA9";
 
     private boolean isGameStopped;
-    
+
     @Override
     public void initialize() {
         setScreenSize(SIDE, SIDE);
@@ -84,6 +84,9 @@ public class MinesweeperGame extends Game {
 
     private void openTile(int x, int y) {
         GameObject gameObject = gameField[y][x];
+        if (gameObject.isOpen || gameObject.isFlag || isGameStopped) {
+            return;
+        }
         gameObject.isOpen = true;
         setCellColor(x, y, Color.GREEN);
         if (gameObject.isMine) {
@@ -121,7 +124,7 @@ public class MinesweeperGame extends Game {
             setCellColor(x, y, Color.YELLOW);
         }
     }
-    
+
     private void gameOver() {
         showMessageDialog(Color.WHITE, "GAME OVER", Color.BLACK, 50);
         isGameStopped = true;
