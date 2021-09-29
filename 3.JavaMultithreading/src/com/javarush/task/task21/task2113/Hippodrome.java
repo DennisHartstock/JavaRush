@@ -38,10 +38,11 @@ public class Hippodrome {
         return horses;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         game = new Hippodrome(new ArrayList<>());
         game.getHorses().add(new Horse("One", 3, 0));
         game.getHorses().add(new Horse("Two", 3, 0));
         game.getHorses().add(new Horse("Three", 3, 0));
+        game.run();
     }
 }
