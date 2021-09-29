@@ -40,6 +40,6 @@ public class Horse {
     }
 
     void print() {
-
+        System.out.println(".".repeat(Math.max(0, (int) distance)) + name);
     }
 }
