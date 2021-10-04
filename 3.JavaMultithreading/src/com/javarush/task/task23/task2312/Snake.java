@@ -60,8 +60,25 @@ public class Snake {
      * Координаты клетки заданы относительно текущей головы с помощью переменных (dx, dy).
      */
     void move(int dx, int dy) {
+        SnakeSection head = sections.get(0);
+        head = new SnakeSection(head.getX() + dx, head.getY() + dy);
 
+        checkBorders(head);
+        if (!isAlive) return;
+
+        checkBody(head);
+        if (!isAlive) return;
+
+        Mouse mouse = Room.game.getMouse();
+        if (head.getX() == mouse.getX() && head.getY() == mouse.getY()) {
+            sections.add(0, head);
+            Room.game.eatMouse();
+        } else {
+            sections.add(0, head);
+            sections.remove(sections.size() - 1);
+        }
     }
+
 
     void checkBorders(SnakeSection head) {
         if ((head.getX() < 0 || head.getX() >= Room.game.getWidth()) || head.getY() < 0 || head.getY() >= Room.game.getHeight()) {

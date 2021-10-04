@@ -149,13 +149,12 @@ public class Room {
         game.createMouse();
         game.run();
     }
-
-
+    
     private int initialDelay = 520;
     private int delayStep = 20;
 
     /**
-     * Программа делает паузу, длинна которой зависит от длинны змеи.
+     * Программа делает паузу, длина которой зависит от длины змеи.
      */
     public void sleep() {
         try {
