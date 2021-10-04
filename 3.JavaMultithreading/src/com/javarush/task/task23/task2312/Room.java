@@ -99,7 +99,7 @@ public class Room {
         int[][] matrix = new int[height][width];
 
         //Рисуем все кусочки змеи
-        ArrayList<SnakeSection> sections = new ArrayList<SnakeSection>(snake.getSections());
+        ArrayList<SnakeSection> sections = new ArrayList<>(snake.getSections());
         for (SnakeSection snakeSection : sections) {
             matrix[snakeSection.getY()][snakeSection.getX()] = 1;
         }
@@ -149,7 +149,7 @@ public class Room {
         game.createMouse();
         game.run();
     }
-    
+
     private int initialDelay = 520;
     private int delayStep = 20;
 
