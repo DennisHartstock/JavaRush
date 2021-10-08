@@ -55,6 +55,15 @@ public class Arkanoid {
         this.bricks = bricks;
     }
 
+    void run() {
+
+    }
+
+    void move() {
+
+    }
+
+    static Arkanoid game;
 
     public static void main(String[] args) {
 
