@@ -29,14 +29,22 @@ public class Ball extends BaseObject {
         this.direction = direction;
         this.isFrozen = true;
     }
-   
+
+    public void start() {
+        this.isFrozen = false;
+    }
+
     @Override
     void draw(Canvas canvas) {
-
+        canvas.setPoint(x, y, 'O');
     }
 
     @Override
     void move() {
-
+        if (!isFrozen) {
+            x += dx;
+            y += dy;
+        }
     }
+    
 }
