@@ -55,5 +55,6 @@ public class Ball extends BaseObject {
     }
 
     public void checkRebound(int minX, int maxX, int minY, int maxY) {
+
     }
 }
