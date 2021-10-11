@@ -15,7 +15,7 @@ public class DataSource {
     private DataSource() {
     }
 
-    private List<User> users = new LinkedList<>() {{
+    private List<User> users = new LinkedList<User>() {{
         add(new User("Ivanov", 123L, 1));
         add(new User("Petrov", 124L, 2));
         add(new User("Petrov", 125L, 1));
