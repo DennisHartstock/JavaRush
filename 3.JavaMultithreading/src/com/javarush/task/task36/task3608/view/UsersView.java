@@ -14,7 +14,7 @@ public class UsersView implements View {
         for (User user : modelData.getUsers()) {
             System.out.println("\t" + user);
         }
-        System.out.println("===================================================");
+        System.out.println("==================================================");
     }
 
     @Override
