@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class ConsoleHelper {
-    private static BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
+    private static BufferedReader bis = new BufferedReader(new InputStreamReader(System.in));
 
     public static void writeMessage(String message) {
         System.out.println(message);
@@ -14,9 +14,9 @@ public class ConsoleHelper {
     public static String readString() {
         while (true) {
             try {
-                String inputText = console.readLine();
-                if (inputText != null)
-                    return inputText;
+                String buf = bis.readLine();
+                if (buf != null)
+                    return buf;
             } catch (IOException e) {
                 writeMessage("Произошла ошибка при попытке ввода текста. Попробуйте еще раз.");
             }
