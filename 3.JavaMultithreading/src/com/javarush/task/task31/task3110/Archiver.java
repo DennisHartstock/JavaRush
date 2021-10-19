@@ -5,8 +5,8 @@ import com.javarush.task.task31.task3110.exception.WrongZipFileException;
 import java.io.IOException;
 
 public class Archiver {
+    public static void main(String[] args) throws IOException {
 
-    public static void main(String[] args) throws Exception {
         Operation operation = null;
         do {
             try {
@@ -20,6 +20,7 @@ public class Archiver {
 
         } while (operation != Operation.EXIT);
     }
+
 
     public static Operation askOperation() throws IOException {
         ConsoleHelper.writeMessage("");
