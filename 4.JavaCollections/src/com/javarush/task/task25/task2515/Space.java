@@ -4,8 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Space {
+    public static Space game;
+    
     private int width;
     private int height;
+    
     private SpaceShip ship;
     private List<Ufo> ufos = new ArrayList<>();
     private List<Rocket> rockets = new ArrayList<>();
