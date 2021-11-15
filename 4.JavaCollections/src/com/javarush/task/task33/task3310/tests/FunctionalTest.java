@@ -58,6 +58,5 @@ public class FunctionalTest {
         Assert.assertNotEquals(testId1, testId2);
         Assert.assertNotEquals(testId2, testId3);
         Assert.assertNotEquals(testId1, testId3);
-
     }
 }
