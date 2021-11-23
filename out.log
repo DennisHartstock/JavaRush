@@ -14829,3 +14829,34 @@ com.homework.plugin.analytics.PluginWarningException: warning
 2021-11-23 09:06:00 INFO  ApacheHttpClient.refreshUserInfo(305) - responseCode = 200
 2021-11-23 09:06:00 INFO  ApacheHttpClient.refreshUserInfo(311) - User information received.
 2021-11-23 09:06:00 INFO  ApacheHttpClient.startGA(36) - GAService started.
+2021-11-23 10:16:15 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2021-11-23 10:16:16 INFO  ApacheHttpClient.getFilteredTasks(336) - responseCode = 200
+2021-11-23 10:16:27 INFO  ApacheHttpClient.getTaskTemplateInfo(353) - responseCode = 200
+2021-11-23 10:16:27 INFO  TaskInfoSelectorMouseListener.createDirectoryRecursive(77) - File created :I:/JavaRush/JavaRushTasks/4.JavaCollections/src/com/javarush/task/task39/task3901
+2021-11-23 10:17:10 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2021-11-23 10:18:23 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2021-11-23 10:18:25 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2021-11-23 10:18:26 INFO  ApacheHttpClient.completed(32) - responseCode = 200
+2021-11-23 10:18:27 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2021-11-23 10:21:39 INFO  ProjectStartupHandler.projectClosing(155) - ---------- Project closed ----------
+
+2021-11-23 10:21:39 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2021-11-23 10:21:39 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2021-11-23 10:21:40 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2021-11-23 10:21:40 INFO  PluginProjectService.dispose(41) - PluginProjectService for disposed.
+2021-11-23 15:21:53 INFO  ProjectStartupHandler.runActivity(74) - ---------- Project opened ----------
+2021-11-23 15:21:53 INFO  ProjectStartupHandler.runActivity(75) - ---------- Version 3.54 ----------
+
+2021-11-23 15:21:53 INFO  ApacheHttpClient.isSessionAppropriateWithSecretKey(602) - Waiting for server response.
+2021-11-23 15:21:53 INFO  ApacheHttpClient.refreshUserInfo(305) - responseCode = 200
+2021-11-23 15:21:53 INFO  ApacheHttpClient.refreshUserInfo(311) - User information received.
+2021-11-23 15:21:53 INFO  ApacheHttpClient.startGA(36) - GAService started.
+2021-11-23 15:25:13 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2021-11-23 15:25:13 INFO  ApacheHttpClient.getFilteredTasks(336) - responseCode = 200
+2021-11-23 15:25:17 INFO  ApacheHttpClient.getTaskTemplateInfo(353) - responseCode = 200
+2021-11-23 15:25:17 INFO  TaskInfoSelectorMouseListener.createDirectoryRecursive(77) - File created :I:/JavaRush/JavaRushTasks/4.JavaCollections/src/com/javarush/task/task39/task3902
+2021-11-23 15:26:47 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2021-11-23 15:27:18 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2021-11-23 15:27:18 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2021-11-23 15:27:19 INFO  ApacheHttpClient.completed(32) - responseCode = 200
+2021-11-23 15:27:20 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
