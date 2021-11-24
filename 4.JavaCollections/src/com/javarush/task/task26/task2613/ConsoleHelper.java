@@ -19,7 +19,7 @@ public class ConsoleHelper {
     public static String readString() throws InterruptOperationException {
         try {
             String text = bis.readLine();
-            if ("exit".equals(text.toLowerCase())) {
+            if ("exit".equalsIgnoreCase(text)) {
                 throw new InterruptOperationException();
             }
 
@@ -76,4 +76,9 @@ public class ConsoleHelper {
             }
         }
     }
+
+    public static void printExitMessage() {
+        ConsoleHelper.writeMessage(res.getString("the.end"));
+    }
+
 }
