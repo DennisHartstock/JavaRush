@@ -14,5 +14,6 @@
     <orderEntry type="library" name="junit:junit:4.12" level="project" />
     <orderEntry type="library" name="org.jsoup:jsoup:1.9.2" level="project" />
     <orderEntry type="library" name="http-client" level="application" />
+    <orderEntry type="library" name="mail-1.4.7" level="project" />
   </component>
 </module>
