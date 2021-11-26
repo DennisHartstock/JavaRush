@@ -4,6 +4,7 @@ import com.javarush.task.task34.task3410.controller.EventListener;
 
 import java.net.URISyntaxException;
 import java.nio.file.Paths;
+import java.util.Objects;
 
 public class Model {
     public static final int FIELD_CELL_SIZE = 20;
@@ -15,7 +16,7 @@ public class Model {
 
     public Model() {
         try {
-            levelLoader = new LevelLoader(Paths.get(getClass().getResource("../res/levels.txt").toURI()));
+            levelLoader = new LevelLoader(Paths.get(Objects.requireNonNull(getClass().getResource("../res/levels.txt")).toURI()));
         } catch (URISyntaxException e) {
         }
     }

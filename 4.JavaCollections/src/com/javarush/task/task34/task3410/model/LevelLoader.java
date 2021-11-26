@@ -37,7 +37,7 @@ public class LevelLoader {
             String line;
             while ((line = reader.readLine()) != null) {
                 if (line.contains("Maze:")) {
-                    readLevel = Integer.valueOf(line.split(" ")[1]);
+                    readLevel = Integer.parseInt(line.split(" ")[1]);
                     continue;
                 }
                 if (readLevel == loopLevel) {
